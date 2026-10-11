@@ -60,8 +60,8 @@ Minpro-4-PBO-ManajemenRentalPS/
 | controller | Pengatur alur logika bisnis dan interaksi database. |
 | view | Antarmuka pengguna CLI. |
 
-3. Penjelasan Alur Program
-3.1 Flowchart Diagram
+## 3. Penjelasan Alur Program
+### 3.1 Flowchart Diagram
 
 flowchart TD
     A([Program Dijalankan]) --> B[Inisialisasi Database Connection]
@@ -73,18 +73,18 @@ flowchart TD
     D --> H[Pilih Menu Lainnya / Keluar]
     C -- Tidak --> I([Tampilkan Error Koneksi & Keluar])
 
-3.2 Penjelasan Alur Operasi
+### 3.2 Penjelasan Alur Operasi
 Inisialisasi Database: Saat program pertama kali dijalankan, aplikasi terhubung ke database db_rental_ps melalui kelas DatabaseConfig.
 
 Membaca Data Awal (Read): Data awal tidak di-insert lewat kode Java, melainkan sudah di-import terlebih dahulu via file database.sql di MySQL. Saat pengguna memilih Menu 2 (Read), program mengeksekusi query SELECT * FROM console untuk mengambil dan menampilkan data awal tersebut ke terminal.
 
 Penyimpanan Data Baru (Create): Penambahan data baru melalui program akan disimpan secara permanen ke tabel console menggunakan PreparedStatement atau ORM.
 
-4. Penjelasan Penerapan Encapsulation dan Inheritance
-4.1 Encapsulation
+## 4. Penjelasan Penerapan Encapsulation dan Inheritance
+### 4.1 Encapsulation
 Atribut pada entitas model dikunci dengan variabel private. Akses data diatur ketat via method getter dan setter. Atribut identitas seperti id menggunakan keyword final (immutable).
 
-4.2 Inheritance
+### 4.2 Inheritance
 Struktur pewarisan kelas terbagi dari 1 superclass ke 2 subclass:
 
 ┌──────────────────────────────┐
@@ -101,16 +101,16 @@ Struktur pewarisan kelas terbagi dari 1 superclass ke 2 subclass:
 │ + jumlahStik (final)           │ │ + fasilitasVIP (final)         │
 └────────────────────────────────┘ └────────────────────────────────┘
 
-5. Penjelasan Abstraction dan Polymorphism
-5.1 Abstraction
+## 5. Penjelasan Abstraction dan Polymorphism
+### 5.1 Abstraction
 Class Console bertindak sebagai abstract class dengan metode abstrak public abstract void displayInfo();.
 
-5.2 Polymorphism
+### 5.2 Polymorphism
 Method Overriding: Implementation displayInfo() berbeda antara PSReguler dan PSVIP.
 
 Method Overloading: Metode hitungTotal() pada RentalController memiliki 2 signature (kalkulasi harga normal & kalkulasi harga diskon).
 
-6. Penjelasan Penerapan JDBC
+## 6. Penjelasan Penerapan JDBC
 Pengelolaan basis data dilakukan menggunakan Java Database Connectivity (JDBC) dengan mekanisme:
 
 DriverManager.getConnection(): Membuka jalur komunikasi aktif ke database MySQL.
@@ -119,12 +119,12 @@ PreparedStatement: Menjalankan query terparameterisasi (INSERT, SELECT, DELETE) 
 
 ResultSet: Menampung baris data hasil query untuk dikonversi kembali ke dalam bentuk instance objek Java.
 
-7. Penjelasan Letak Penerapan Nilai Tambah (ORM Framework)
+## 7. Penjelasan Letak Penerapan Nilai Tambah (ORM Framework)
 Nilai tambah diimplementasikan pada package repository/ConsoleORMRepository.java:
 
 Object-Relational Mapping (ORM): Mengotomatisasi pemetaan entitas objek Java secara langsung ke atribut kolom tabel database menggunakan teknik Object Reflection.
 
 Pemetaan tipe entitas secara dinamis mengubah instance objek Console menjadi baris data relasional tanpa perlu menuliskan query SQL secara manual.
 
-8. Output Program & Database
+
 
