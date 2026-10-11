@@ -63,6 +63,7 @@ Minpro-4-PBO-ManajemenRentalPS/
 ## 3. Penjelasan Alur Program
 ### 3.1 Flowchart Diagram
 
+```mermaid
 flowchart TD
     A([Program Dijalankan]) --> B[Inisialisasi Database Connection]
     B --> C{Koneksi Sukses?}
@@ -72,6 +73,7 @@ flowchart TD
     F --> G[Tampilkan Data Awal di Terminal]
     D --> H[Pilih Menu Lainnya / Keluar]
     C -- Tidak --> I([Tampilkan Error Koneksi & Keluar])
+```
 
 ### 3.2 Penjelasan Alur Operasi
 Inisialisasi Database: Saat program pertama kali dijalankan, aplikasi terhubung ke database db_rental_ps melalui kelas DatabaseConfig.
