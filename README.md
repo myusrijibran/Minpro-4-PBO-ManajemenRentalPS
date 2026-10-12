@@ -59,6 +59,7 @@ Minpro-4-PBO-ManajemenRentalPS/
 | repository | Layer pemetaan objek berbasis Framework ORM. |
 | controller | Pengatur alur logika bisnis dan interaksi database. |
 | view | Antarmuka pengguna CLI. |
+```
 
 ## 3. Penjelasan Alur Program
 ### 3.1 Flowchart Diagram
